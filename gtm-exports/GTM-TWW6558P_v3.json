@@ -1,0 +1,124 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-04-16 14:40:49",
+    "containerVersion": {
+        "path": "accounts/6350165243/containers/249570660/versions/3",
+        "accountId": "6350165243",
+        "containerId": "249570660",
+        "containerVersionId": "3",
+        "name": "Server-side GA4 via Stape",
+        "container": {
+            "path": "accounts/6350165243/containers/249570660",
+            "accountId": "6350165243",
+            "containerId": "249570660",
+            "name": "tracklab-store.local",
+            "publicId": "GTM-TWW6558P",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1776332502286",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6350165243/containers/249570660/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-TWW6558P"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "tagId": "4",
+                "name": "GA4 - Google Tag",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "G-6XQR871RH8"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "server_container_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "https://degquixm.apn.stape.io"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1776341252296",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6350165243",
+                "containerId": "249570660",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1776341304112",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6350165243/containers/249570660/versions/3?apiLink=version"
+    }
+}

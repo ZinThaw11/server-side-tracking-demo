@@ -1,0 +1,139 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-04-16 14:42:58",
+    "containerVersion": {
+        "path": "accounts/6350165243/containers/249585998/versions/2",
+        "accountId": "6350165243",
+        "containerId": "249585998",
+        "containerVersionId": "2",
+        "name": "GA4 server-side tag",
+        "container": {
+            "path": "accounts/6350165243/containers/249585998",
+            "accountId": "6350165243",
+            "containerId": "249585998",
+            "name": "tracklab-store.local sGTM",
+            "publicId": "GTM-M82NVS2M",
+            "usageContext": [
+                "SERVER"
+            ],
+            "fingerprint": "1776341065428",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6350165243/containers/249585998/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": true,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": true
+            },
+            "tagIds": [
+                "GTM-M82NVS2M"
+            ],
+            "taggingServerUrls": [
+                "https://degquixm.apn.stape.io"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6350165243",
+                "containerId": "249585998",
+                "tagId": "4",
+                "name": "GA4 - Server-Side",
+                "type": "sgtmgaaw",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "redactVisitorIp",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "epToIncludeDropdown",
+                        "value": "all"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "upToIncludeDropdown",
+                        "value": "all"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "G-6XQR871RH8"
+                    }
+                ],
+                "fingerprint": "1776341604069",
+                "firingTriggerId": [
+                    "2147479574"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6350165243",
+                "containerId": "249585998",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1776341620521",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6350165243/containers/249585998/versions/2?apiLink=version",
+        "client": [
+            {
+                "accountId": "6350165243",
+                "containerId": "249585998",
+                "clientId": "1",
+                "name": "GA4",
+                "type": "gaaw_client",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "activateDefaultPaths",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieManagement",
+                        "value": "server"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieName",
+                        "value": "FPID"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookiePath",
+                        "value": "/"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieMaxAgeInSec",
+                        "value": "63072000"
+                    }
+                ],
+                "fingerprint": "1776339856276"
+            }
+        ]
+    }
+}

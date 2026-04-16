@@ -1,8 +1,7 @@
 # Server-Side Tracking Demo — Project Plan
 
 ## Goal
-Build a fake WordPress e-commerce site to demonstrate server-side tracking skills.
-Used as proof of work for a LinkedIn case study post.
+Build a WordPress e-commerce test site to demonstrate server-side tracking skills.
 
 ---
 
@@ -18,72 +17,54 @@ Used as proof of work for a LinkedIn case study post.
 ## WordPress Setup
 
 ### Hosting
-- Option A: InfinityFree (free, no credit card)
-- Option B: 000webhost (free)
-- Option C: Local install via LocalWP (best for testing, no hosting needed)
+- ~~Option A: InfinityFree~~
+- ~~Option B: 000webhost~~
+- ✅ Option C: Local install via LocalWP
 
 ### Theme
-- Astra (free) — fast, lightweight, WooCommerce-ready
+- ✅ Astra (free) — fast, lightweight, WooCommerce-ready
 
-### Plugins to Install
-| Plugin | Purpose |
-|---|---|
-| WooCommerce | Fake e-commerce store |
-| GTM4WP | Inject GTM container into site |
-| Pixel Your Site (free tier) | Meta Pixel + CAPI integration |
-| Astra Starter Templates | Quick page designs |
+### Plugins Installed
+| Plugin | Purpose | Status |
+|---|---|---|
+| WooCommerce | Fake e-commerce store | ✅ Done |
+| GTM4WP | Inject GTM container into site | ✅ Done |
+| Elementor | Page builder | ✅ Done |
+| Astra Starter Templates | Quick page designs | ✅ Done |
+| Pixel Your Site (free tier) | Meta Pixel + CAPI integration | ⏳ Phase 3 |
 
 ---
 
 ## Tracking Setup Checklist
 
 ### Phase 1 — Browser-Side (Standard)
-- [ ] Create GTM account + web container
-- [ ] Install GTM on WordPress via GTM4WP plugin
-- [ ] Add Meta Pixel via GTM (PageView, AddToCart, Purchase triggers)
-- [ ] Add GA4 via GTM (same events)
-- [ ] Verify events firing in GTM Preview mode
-- [ ] Verify events in Meta Events Manager
-- [ ] Verify events in GA4 DebugView
+- [x] Create GTM account + web container (`GTM-TWW6558P`)
+- [x] Install GTM on WordPress via GTM4WP plugin
+- [x] Add GA4 via GTM (`GA4 - Google Tag`, Measurement ID: `G-6XQR871RH8`)
+- [x] Verify events firing in GTM Preview mode
+- [x] Verify events in GA4 DebugView
+- [ ] Add Meta Pixel via GTM — deferred to Phase 3
+- [ ] Verify events in Meta Events Manager — deferred to Phase 3
 
 ### Phase 2 — Server-Side (Stape)
-- [ ] Create Stape account (free tier)
-- [ ] Set up GTM server container in Stape
-- [ ] Connect web container to server container
-- [ ] Migrate Meta Pixel tag to server-side
-- [ ] Configure Meta CAPI with event_id for deduplication
-- [ ] Migrate GA4 tag to server-side
-- [ ] Verify server-side events in Stape logs
-- [ ] Verify events in Meta Events Manager (server source)
-- [ ] Check Event Match Quality score in Meta
+- [x] Create Stape account (free tier)
+- [x] Set up GTM server container in Stape (`GTM-M82NVS2M`)
+- [x] Connect web container to server container via `server_container_url`
+- [x] Migrate GA4 tag to server-side (`GA4 - Server-Side`)
+- [x] Verify server-side events in GTM server container preview
+- [x] Verify events in GA4 DebugView
+- [ ] Migrate Meta Pixel tag to server-side — Phase 3
+- [ ] Configure Meta CAPI with event_id for deduplication — Phase 3
+- [ ] Verify events in Meta Events Manager (server source) — Phase 3
+- [ ] Check Event Match Quality score in Meta — Phase 3
 
-### Phase 3 — Compare & Document
-- [ ] Block browser-side pixel with an ad blocker
-- [ ] Confirm server-side still fires
-- [ ] Screenshot browser-only vs server-side event counts
-- [ ] Screenshot Meta Event Match Quality score
-- [ ] Screenshot GA4 real-time server events
-
----
-
-## Screenshot Checklist (for LinkedIn post)
-
-1. Meta Events Manager — showing both browser and server event sources
-2. Event Match Quality score (before and after if possible)
-3. GTM server container preview — showing events hitting the server
-4. Stape dashboard — showing requests received
-5. GA4 DebugView — showing server-side events
-
----
-
-## LinkedIn Post Angle
-
-**Hook:** Implemented server-side tracking on a test site. Here's what changed.
-
-**Story:**
-- Problem: browser-side pixels miss data (ad blockers, iOS, cookie limits)
-- Action: set up GTM server container via Stape + Meta CAPI
-- Result: events still fire even with ad blocker on, event match quality improved
+### Phase 3 — Meta Pixel + CAPI (Coming Next)
+- [ ] Set up Meta Pixel via GTM
+- [ ] Set up Meta CAPI via Stape
+- [ ] Configure event deduplication (event_id)
+- [ ] Block browser-side pixel with ad blocker — confirm server-side still fires
+- [ ] Compare browser-only vs server-side event counts
+- [ ] Check Event Match Quality score improvement in Meta
 
 ---
 

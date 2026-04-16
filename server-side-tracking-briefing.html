@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Server-Side Tracking Briefing</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      padding: 40px 20px;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 56px 64px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .badge {
+      display: inline-block;
+      background: #111;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 36px 0;
+    }
+    h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #111;
+    }
+    .flow-box {
+      background: #f9f9f9;
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .flow-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .flow-label.problem { color: #c0392b; }
+    .flow-label.solution { color: #27ae60; }
+    .flow-code {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.8;
+    }
+    .flow-arrow {
+      color: #aaa;
+      margin: 0 4px;
+    }
+    .problem-note {
+      font-size: 13px;
+      color: #c0392b;
+      margin-top: 8px;
+    }
+    .solution-note {
+      font-size: 13px;
+      color: #27ae60;
+      margin-top: 8px;
+    }
+    .stape-box {
+      background: #f0f7ff;
+      border: 1px solid #c8e0ff;
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #1a3a5c;
+    }
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+    }
+    .steps li {
+      counter-increment: steps;
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+    .step-num {
+      min-width: 36px;
+      height: 36px;
+      background: #111;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .step-content h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .step-content code {
+      background: #f0f0f0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #333;
+    }
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .check {
+      min-width: 18px;
+      height: 18px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      margin-top: 1px;
+    }
+    .footer {
+      margin-top: 48px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+    }
+    .print-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      background: #111;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .print-btn:hover { background: #333; }
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; padding: 40px; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="badge">TrackLab Store</div>
+  <h1>Server-Side Tracking Briefing</h1>
+  <p class="subtitle">A plain-English guide to what you're building and why it matters.</p>
+
+  <hr class="divider">
+
+  <h2>How It Works</h2>
+
+  <div class="flow-box">
+    <div class="flow-label problem">Browser-Side Only (current)</div>
+    <div class="flow-code">
+      User visits site
+      <span class="flow-arrow">→</span> Browser fires GTM
+      <span class="flow-arrow">→</span> GTM sends data to GA4 / Meta
+    </div>
+    <div class="problem-note">Ad blockers, iOS privacy, and browser restrictions can block this entirely.</div>
+  </div>
+
+  <div class="flow-box">
+    <div class="flow-label solution">Server-Side (what you're adding)</div>
+    <div class="flow-code">
+      User visits site
+      <span class="flow-arrow">→</span> Browser fires GTM
+      <span class="flow-arrow">→</span> GTM sends data to YOUR server
+      <span class="flow-arrow">→</span> Server sends data to GA4 / Meta
+    </div>
+    <div class="solution-note">Requests go through your server first — ad blockers can't touch it.</div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>What Stape Does</h2>
+
+  <div class="stape-box">
+    Stape hosts your <strong>GTM server container</strong> for free. Instead of managing your own server, Stape handles it. Your GTM web container sends data to Stape, and Stape forwards it to GA4 and Meta. You get a server URL like <code>https://xxxxx.stape.io</code> — that's where all your data flows through.
+  </div>
+
+  <hr class="divider">
+
+  <h2>The 5 Steps</h2>
+
+  <ol class="steps">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Create Stape Account + Server Container</h3>
+        <p>Sign up at stape.io (free tier). Stape gives you a server URL — this is where your data will flow through.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Connect Web Container to Server Container</h3>
+        <p>In GTM, tell your web container to send GA4 and Meta data to your Stape server URL instead of directly to Google and Meta.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Migrate GA4 to Server-Side</h3>
+        <p>Replace the direct GA4 tag with a tag that sends to Stape first, then Stape forwards to GA4.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Set Up Meta Pixel + CAPI</h3>
+        <p>Meta Pixel fires from the browser. CAPI sends a duplicate from the server. Both hit Meta — with deduplication so events aren't counted twice.</p>
+      </div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3>Test with Ad Blocker</h3>
+        <p>Install an ad blocker, block the browser pixel — confirm server-side still fires. This is your proof for the LinkedIn post.</p>
+      </div>
+    </li>
+  </ol>
+
+  <hr class="divider">
+
+  <h2>Screenshots to Capture (for LinkedIn)</h2>
+
+  <ul class="checklist">
+    <li><div class="check"></div> Meta Events Manager — showing both browser and server event sources</li>
+    <li><div class="check"></div> Event Match Quality score in Meta</li>
+    <li><div class="check"></div> GTM server container preview — events hitting the server</li>
+    <li><div class="check"></div> Stape dashboard — showing requests received</li>
+    <li><div class="check"></div> GA4 DebugView — showing server-side events</li>
+    <li><div class="check"></div> Browser with ad blocker ON — server still firing</li>
+  </ul>
+
+  <div class="footer">TrackLab Store · Server-Side Tracking Demo · 2025</div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Save as PDF</button>
+
+</body>
+</html>

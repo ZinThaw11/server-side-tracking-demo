@@ -2,6 +2,8 @@
 
 A portfolio project demonstrating server-side tracking implementation using Google Tag Manager, Stape, and GA4 on a WordPress/WooCommerce test site.
 
+> **Note:** This is a demo project built for portfolio purposes. All IDs, containers, and credentials are from a test environment with no real business data.
+
 ## What This Project Covers
 
 - Setting up a GTM web container and server container

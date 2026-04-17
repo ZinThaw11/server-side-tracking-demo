@@ -58,10 +58,13 @@ Build a WordPress e-commerce test site to demonstrate server-side tracking skill
 - [ ] Verify events in Meta Events Manager (server source) — Phase 3
 - [ ] Check Event Match Quality score in Meta — Phase 3
 
-### Phase 3 — Meta Pixel + CAPI (Coming Next)
-- [ ] Set up Meta Pixel via GTM
-- [ ] Set up Meta CAPI via Stape
-- [ ] Configure event deduplication (event_id)
+### Phase 3 — Meta Pixel + CAPI
+- [x] Set up Meta Pixel via GTM (`Meta Pixel - PageView`, Pixel ID: `967118215859697`)
+- [x] Set up Meta CAPI via GTM server container (`Meta CAPI - PageView`)
+- [x] Verified browser events in Meta Events Manager Test Events
+- [x] Verified server events in Meta Events Manager Test Events
+- [x] Confirmed both Browser and Server sources showing in Meta Events Manager
+- [ ] Configure event deduplication (event_id) — coming next
 - [ ] Block browser-side pixel with ad blocker — confirm server-side still fires
 - [ ] Compare browser-only vs server-side event counts
 - [ ] Check Event Match Quality score improvement in Meta

@@ -74,4 +74,5 @@ The `gtm-exports/` folder contains the exported configurations for both containe
 
 - [x] Phase 1 — Browser-side GTM + GA4 setup
 - [x] Phase 2 — Server-side via Stape (GTM server container + GA4)
-- [ ] Phase 3 — Meta Pixel + CAPI (coming soon)
+- [x] Phase 3 — Meta Pixel (browser) + Meta CAPI (server) — both confirmed in Meta Events Manager
+- [ ] Phase 3 (remaining) — Event deduplication, ad blocker test, Event Match Quality score
